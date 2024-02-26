@@ -4,20 +4,20 @@
 package com.jah.springmvcboot.model;
 
 /**
- * 
+ * The Bean, Alien
  */
 public class Alien {
 
 	private int aid; // alien ID
 	private String name;
 	
-	
+	// default Constructor
 	public Alien() {
 		aid = 0;
 		name = "Alien";
 	}
 	
-	
+	/* --- Get and Set Methods ---  */
 	public int getAid() {
 		return aid;
 	}
