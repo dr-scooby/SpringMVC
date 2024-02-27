@@ -5,6 +5,7 @@ package com.jah.springmvcboot;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -19,6 +20,13 @@ import jakarta.servlet.http.HttpSession;
  */
 @Controller
 public class HomeController {
+	
+	
+	// ModelAttribute is called before any Spring
+	@ModelAttribute
+	public void modelData(Model m) {
+		m.addAttribute("username", "Scooby");
+	}
 
 	@RequestMapping("/")
 	public String home() {
@@ -30,7 +38,7 @@ public class HomeController {
 	// add an alien, get data from client
 	@RequestMapping("addAlien")
 	public String addAlien(@RequestParam("aid") int aid, @RequestParam("name") String name, Model m) {
-		System.out.println("AddAlien called...");
+		System.out.println("Add Alien called...");
 		
 		Alien al = new Alien();
 		al.setAid(aid);
