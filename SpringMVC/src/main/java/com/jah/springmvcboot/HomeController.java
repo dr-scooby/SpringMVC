@@ -26,8 +26,10 @@ public class HomeController {
 	@ModelAttribute
 	public void modelData(Model m) {
 		m.addAttribute("username", "Scooby");
+		// used in the jsp page AlienResults as Welcome Back ${username}
 	}
 
+	
 	@RequestMapping("/")
 	public String home() {
 		System.out.println("home page requested");
