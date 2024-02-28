@@ -23,5 +23,13 @@
 	Enter Alien Name : <input type="text" name="name"><br>
 	<input type="submit">
 </form>
+<br>
+<br>
+<h2>Enter Alien info using Post:</h2>
+<form action="addAlien2" method="post">
+	Enter Alien ID : <input type="text" name="aid"><br>
+	Enter Alien Name : <input type="text" name="name"><br>
+	<input type="submit">
+</form>
 </body>
 </html>

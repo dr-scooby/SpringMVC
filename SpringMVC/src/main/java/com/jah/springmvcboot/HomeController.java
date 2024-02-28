@@ -6,6 +6,7 @@ package com.jah.springmvcboot;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -37,7 +38,7 @@ public class HomeController {
 	}
 	
 	
-	// add an alien, get data from client
+	// add an alien, get data from client, RequestMapping supports both get and post requests
 	@RequestMapping("addAlien")
 	public String addAlien(@RequestParam("aid") int aid, @RequestParam("name") String name, Model m) {
 		System.out.println("Add Alien called...");
@@ -52,7 +53,20 @@ public class HomeController {
 		
 	}
 	
-	
+	// using Post method
+	@PostMapping("addAlien2")
+	public String addAlien2(@RequestParam("aid") int aid, @RequestParam("name") String name, Model m) {
+		System.out.println("Add Alien2 called using Post method...");
+		
+		Alien al = new Alien();
+		al.setAid(aid);
+		al.setName(name);
+		
+		m.addAttribute("alien", al);
+		
+		return "AlienResults";
+		
+	}
 	
 	// -- Calculation add to numbers
 	@RequestMapping("add")
