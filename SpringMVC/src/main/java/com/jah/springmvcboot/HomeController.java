@@ -3,8 +3,12 @@
  */
 package com.jah.springmvcboot;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -67,6 +71,20 @@ public class HomeController {
 		return "AlienResults";
 		
 	}
+	
+	
+	@GetMapping("getAliens")
+	public String getAliens(Model m) {
+		System.out.println("Get Aliens called");
+		
+		List<Alien> aliens = Arrays.asList( new Alien(101, "Jah"), new Alien(200, "Yoda"));
+		
+		m.addAttribute("result", aliens);
+		
+		return "showAliens";
+	}
+	
+	
 	
 	// -- Calculation add to numbers
 	@RequestMapping("add")

@@ -17,6 +17,18 @@ public class Alien {
 		name = "Alien";
 	}
 	
+	
+	
+	// take ID and Name
+	public Alien(int aid, String name) {
+		super();
+		this.aid = aid;
+		this.name = name;
+	}
+
+
+
+
 	/* --- Get and Set Methods ---  */
 	public int getAid() {
 		return aid;
